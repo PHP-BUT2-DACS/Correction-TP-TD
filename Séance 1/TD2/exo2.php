@@ -16,17 +16,28 @@
 
 // Ici, remplir la fonction modifier_mon_formulaire
 function modifier_mon_formulaire(array $formulaire) : array {
+    $formulaire["prenom"] = trim($formulaire["prenom"]);
+    $formulaire["nom"] = trim($formulaire["nom"]);
+    $formulaire["nom"] = strtoupper($formulaire["nom"]);
+    $formulaire["age"] = intval($formulaire["age"]);
 
     return $formulaire;
 }
 
 // Ici, remplir la fonction valider_mon_formulaire
 function valider_mon_formulaire(array $formulaire) : bool {
+    if ($formulaire["age"] < 13) {
+        return false;
+    }
+
+    if (strlen($formulaire["prenom"]) == 0 || strlen($formulaire["nom"]) == 0) {
+        return false;
+    }
 
     return true;
 }
 
-/* --- NE PAS TOUCHER, VOUS POUVEZ REGARDER --- */
+/* --- NE PAS TOUCHER --- */
 
 $formulaire1 = [
     "prenom" => "Julien",
@@ -36,7 +47,7 @@ $formulaire1 = [
 
 $formulaire2 = [
     "prenom" => "Christophe",
-    "nom" => "JALOuX",
+    "nom" => "JALOUX",
     "age" => "12"
 ];
 
@@ -45,8 +56,6 @@ $formulaire3 = [
     "nom" => " ",
     "age" => 99
 ];
-
-/* VOUS POUVEZ IGNORER CETTE PARTIE */
 
 // Valide le formulaire 1
 
