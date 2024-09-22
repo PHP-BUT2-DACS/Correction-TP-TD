@@ -3,10 +3,10 @@
 /**
  * Créé un compte dans la liste des utilisateurs
  *
- * @param $user
+ * @param array $user
  * @return void
  */
-function add_user($user) : void {
+function add_user(array $user) : void {
     // Récupère le contenu du fichier des utilisateurs
     $users_file_content = file_get_contents('users.json');
 
