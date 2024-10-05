@@ -42,6 +42,9 @@ if (!empty($_POST)) {
         $login_error = "Nom d'utilisateur ou mot de passe incorrect";
     }
     else {
+        // S'assure qu'une session existe
+        session_start();
+
         // Détruit la session précédente (pour être sûr)
         session_destroy();
 

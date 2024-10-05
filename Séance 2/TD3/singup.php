@@ -79,6 +79,9 @@ if (!empty($_POST)) {
 
     // S'il n'existe aucune erreur lors de la création du compte
     if (sizeof($errors) == 0) {
+        // S'assure qu'une session existe
+        session_start();
+
         // Détruit la session précédente (pour être sûr)
         session_destroy();
 
