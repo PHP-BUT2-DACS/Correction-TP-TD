@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <p>Page de test</p>
+    <p>{{ echo $nom }}</p>
+
+    @if($ma_var == 2)
+        <p>ma var est égale à 3!!!</p>
+    @else
+        <p>ma var n'est pas égale à 3</p>
+    @endif
+
+    <ul>
+        @foreach($items as $item)
+            <li>élément : @echo($item)</li>
+        @endforeach
+    </ul>
+
+    <footer>
+        @require("footer.html")
+    </footer>
+</body>
+</html>
